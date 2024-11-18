@@ -11,7 +11,7 @@ export const colorText = (nameElement: HTMLElement) => {
       const mouseX = event.clientX;
       const mouseY = event.clientY;
 
-      spans.forEach((span, index) => {
+      spans.forEach((span) => {
         const spanRect = span.getBoundingClientRect();
 
         if (
@@ -22,7 +22,7 @@ export const colorText = (nameElement: HTMLElement) => {
         ) {
           span.style.background =
             "linear-gradient(90deg, #6a0dad, #b066ff)";
-          span.style.webkitBackgroundClip = "text";
+          span.style.backgroundClip = "text";
           span.style.color = "transparent";
         } else {
           span.style.background = "none";
