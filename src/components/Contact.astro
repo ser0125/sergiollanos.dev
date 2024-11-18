@@ -1,16 +1,75 @@
 <section id="contact">
-  <h2>Contact!</h2>
-  <p>
+  <h2 class="contact-title">Contact!</h2>
+  <p class="contact-description">
     Let’s connect! Whether you have a project in mind, a question, or simply
     want to chat, feel free to drop a message.
   </p>
-  <img src="/src/assets/icons/github.svg" alt="Github Icon" />
-  <img src="/src/assets/icons/linkedin.svg" alt="Linkedin Icon" />
-  <img src="/src/assets/icons/instagram.svg" alt="Instagram Icon" />
+
+  <a
+    href="https://github.com/ser0125/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="work-card-link"
+  >
+    <img src="/src/assets/icons/github.svg" alt="Github Icon" class="icon" />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/sergiollanos/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="work-card-link"
+  >
+    <img
+      src="/src/assets/icons/linkedin.svg"
+      alt="Linkedin Icon"
+      class="icon"
+    />
+  </a>
+  <a
+    href="https://www.instagram.com/sergio.llanos22/profilecard/?igsh=MWR1ZjR6OXJoOG1nNQ=="
+    target="_blank"
+    rel="noopener noreferrer"
+    class="work-card-link"
+  >
+    <img
+      src="/src/assets/icons/instagram.svg"
+      alt="Instagram Icon"
+      class="icon"
+    />
+  </a>
+  <style>
+    section {
+      padding: 1em;
+      box-shadow: 0 8px 26px 0 rgba(22, 24, 26, 0.07);
+    }
+    .contact-title,
+    .contact-description {
+      cursor: default;
+    }
+    .icon {
+      cursor: pointer;
+      filter: grayscale(100%); /* Convierte el ícono a escala de grises */
+      transition:
+        filter 0.3s ease,
+        transform 0.3s ease; /* Suaviza la transición */
+    }
+
+    .icon:hover {
+      filter: grayscale(0%); /* Vuelve a color al hacer hover */
+      transform: scale(1.1); /* Opción: Agranda ligeramente el ícono */
+    }
+  </style>
+  <script type="module">
+    import { colorText } from "/sergiollanos.dev/src/utils/colorText";
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = [
+        document.querySelector(".contact-title"),
+        document.querySelector(".contact-description"),
+      ];
+
+      elements.forEach((element) => {
+        if (element) colorText(element);
+      });
+    });
+  </script>
 </section>
-<style>
-  section {
-    padding: 1em;
-    box-shadow: 0 8px 26px 0 rgba(22, 24, 26, 0.07);
-  }
-</style>

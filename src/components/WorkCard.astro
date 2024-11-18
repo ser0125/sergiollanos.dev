@@ -43,7 +43,7 @@ const { image, title, url } = Astro.props;
     transition: "background 0.5s ease, color 0.5s ease"; /* Suaviza el efecto */
   }
 
-  h1:hover {
+  .work-card:hover h1 {
     color: transparent; /* Hace que el color del texto sea transparente */
     background: linear-gradient(90deg, #6a0dad, #b066ff);
     -webkit-background-clip: text; /* El fondo se recorta al texto */

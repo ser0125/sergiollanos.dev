@@ -1,0 +1,30 @@
+---
+import lottie from 'lottie-web';
+
+let animationContainer: HTMLDivElement | null = null;
+
+const initializeAnimation = () => {
+  if (animationContainer) {
+    lottie.loadAnimation({
+      container: animationContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/src/assets/animations/home.json', // Ruta a tu animación Lottie
+    });
+  }
+};
+---
+
+<div class="animation-container" client:load bind:this={animationContainer}></div>
+
+<script>
+  initializeAnimation();
+</script>
+
+<style>
+.animation-container {
+  width: 300px;
+  height: 300px;
+}
+</style>

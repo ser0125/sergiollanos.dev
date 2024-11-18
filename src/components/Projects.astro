@@ -4,7 +4,7 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 ---
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2 class="project-title">Projects</h2>
 
   <div class="container">
     <div class="animation-container">
@@ -79,4 +79,16 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
     padding: 1em;
     box-shadow: 0 8px 26px 0 rgba(22, 24, 26, 0.07);
   }
+  .project-title {
+    cursor: default;
+  }
 </style>
+
+<script type="module">
+  import { colorText } from "/sergiollanos.dev/src/utils/colorText";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const title = document.querySelector(".project-title");
+    if (title) colorText(title);
+  });
+</script>

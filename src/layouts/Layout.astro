@@ -13,9 +13,23 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/sergiollanos.dev/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/sergiollanos.dev/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/sergiollanos.dev/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/sergiollanos.dev/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/sergiollanos.dev/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/sergiollanos.dev/favicon-16x16.png"
+    />
     <link rel="manifest" href="/sergiollanos.dev/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -51,3 +65,23 @@ const { title } = Astro.props;
       monospace;
   }
 </style>
+
+<!-- JavaScript para el cursor trail -->
+<script>
+  document.addEventListener("mousemove", (e) => {
+    createTrail(e.pageX, e.pageY);
+  });
+
+  function createTrail(x: number, y: number) {
+    const trail = document.createElement("div");
+    trail.className = "trail";
+    trail.style.left = `${x}px`;
+    trail.style.top = `${y}px`;
+
+    document.body.appendChild(trail);
+
+    setTimeout(() => {
+      trail.remove();
+    }, 500);
+  }
+</script>

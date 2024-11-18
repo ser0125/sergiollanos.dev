@@ -4,12 +4,12 @@
 <div class="profile-card" id="about">
   <div>
     <h1 class="name">Sergio Llanos</h1>
-    <h2>Front End Engineer</h2>
-    <p>
+    <h2 class="title">Front End Engineer</h2>
+    <p class="detail-1">
       Software Engineer with expertise in JavaScript and a strong passion for
       creating efficient and high-performance web applications.
     </p>
-    <p>
+    <p class="detail-2">
       I am passionate about doing the best possible in the projects so the
       client satisfaction and high-quality software solutions are my top
       priorities. My passion for coding, attention to detail and commitment to
@@ -29,14 +29,50 @@
   .name {
     font-size: 4.5rem;
     font-family: Elsie;
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    white-space: nowrap; /* Evitar que el texto se divida */
   }
+
+  .title,
+  .detail-1,
+  .detail-2 {
+    cursor: default;
+  }
+
+  .name span {
+    position: relative;
+    display: inline-block;
+    transition: "background 0.1s ease-out";
+    color: black;
+  }
+
   .profile-card {
     display: flex;
     gap: 5rem;
     box-shadow: 0 8px 26px 0 rgba(22, 24, 26, 0.07);
     padding: 1em;
   }
+
   .image {
     border-radius: 5%;
   }
 </style>
+
+<script type="module">
+  import { colorText } from "/sergiollanos.dev/src/utils/colorText";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = [
+      document.querySelector(".name"),
+      document.querySelector(".title"),
+      document.querySelector(".detail-1"),
+      document.querySelector(".detail-2"),
+    ];
+
+    elements.forEach((element) => {
+      if (element) colorText(element);
+    });
+  });
+</script>
