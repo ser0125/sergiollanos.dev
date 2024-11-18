@@ -1,11 +1,4 @@
 @font-face {
-  font-family: Prata;
-  src: url("../fonts/Prata-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Elsie;
   src: url("../fonts/Elsie-Regular.ttf");
   font-weight: 400;
@@ -13,8 +6,8 @@
 }
 
 @font-face {
-  font-family: Caveat;
-  src: url("../fonts/Caveat-Regular.ttf");
+  font-family: HindVadodara;
+  src: url("../fonts/HindVadodara-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
