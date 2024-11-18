@@ -1,26 +1,74 @@
 ---
 import WorkCard from "./WorkCard.astro";
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 ---
 
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="work-container">
-    <WorkCard image="/sergiollanos.dev/allstate.png" title="Allstate" />
-    <WorkCard image="/sergiollanos.dev/entryready.png" title="Entryready" />
-    <WorkCard
-      image="/sergiollanos.dev/zenbusiness-money.png"
-      title="Zenbusiness"
-    />
+  <div class="container">
+    <div class="animation-container">
+      <LottieAnimation
+        src="/src/assets/animations/animation.json"
+        autoplay="visible"
+      />
+    </div>
+    <div class="images-container">
+      <WorkCard
+        url="https://roadside.allstate.com/"
+        image="/sergiollanos.dev/allstate.png"
+        title="Allstate"
+      />
+      <WorkCard
+        url="https://entryready.io/"
+        image="/sergiollanos.dev/entryready.png"
+        title="Entryready"
+      />
+      <WorkCard
+        url="https://www.zenbusiness.com/"
+        image="/sergiollanos.dev/zenbusiness-money.png"
+        title="Zenbusiness"
+      />
+    </div>
   </div>
   <div class="work-container">
-    <WorkCard image="/sergiollanos.dev/whitepages.png" title="WhitePages" />
-    <WorkCard image="/sergiollanos.dev/nissan.png" title="Nissan" />
-    <WorkCard image="/sergiollanos.dev/bancolombia.png" title="Bancolombia" />
+    <WorkCard
+      url="https://www.whitepages.com/"
+      image="/sergiollanos.dev/whitepages.png"
+      title="WhitePages"
+    />
+    <WorkCard
+      url="https://www.nissanusa.com/shopping-tools/build-price"
+      image="/sergiollanos.dev/nissan.png"
+      title="Nissan"
+    />
+    <WorkCard
+      url="https://www.bancolombia.com/personas"
+      image="/sergiollanos.dev/bancolombia.png"
+      title="Bancolombia"
+    />
   </div>
 </section>
 
 <style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .animation-container {
+    width: 600px;
+    height: 800px;
+  }
+
+  .images-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    cursor: pointer;
+  }
   .work-container {
     display: flex;
     gap: 2rem;

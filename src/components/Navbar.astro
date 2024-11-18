@@ -6,13 +6,13 @@
   <nav>
     <ul>
       <li>
-        <a href="#about">About</a>
+        <a href="#about" class="nav-link">ABOUT ME</a>
       </li>
       <li>
-        <a href="#projects">Projects</a>
+        <a href="#projects" class="nav-link">PROJECTS</a>
       </li>
       <li>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
       </li>
     </ul>
   </nav>
@@ -30,6 +30,7 @@
     border-radius: 0.5em;
     padding: 1.7em 2.5em;
     background-color: #000;
+    min-width: 200px;
   }
   ul {
     padding: 0;
@@ -41,5 +42,49 @@
   a {
     text-decoration: none;
     color: #fff;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  a.active {
+    opacity: 1;
+    font-weight: bold;
+    border-left: 4px solid #fff;
+    padding-left: 10px;
+  }
+
+  a:hover {
+    font-weight: bold;
+    opacity: 1;
+    color: transparent; /* Hace que el color del texto sea transparente */
+    background: linear-gradient(90deg, #b144ff, #dfc5fb);
+    -webkit-background-clip: text; /* El fondo se recorta al texto */
+    background-clip: text; /* Compatibilidad adicional */
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll(".nav-link") as NodeListOf<HTMLAnchorElement>;
+  const sections = Array.from(links).map(link =>
+    document.querySelector(link.getAttribute("href")!) as HTMLElement
+  );
+
+  const activateLink = () => {
+    const scrollPosition = window.scrollY;
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + scrollPosition - 100;
+      const sectionBottom = sectionTop + section.offsetHeight;
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        links.forEach(link => link.classList.remove("active"));
+        links[index].classList.add("active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", activateLink);
+  activateLink(); // Inicialización al cargar
+});
+</script>

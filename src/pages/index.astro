@@ -9,7 +9,7 @@ import Contact from "../components/Contact.astro";
 <Layout title="Sergio Llanos">
   <main>
     <Navbar />
-    <div>
+    <div class="container">
       <ProfileCard />
       <Projects />
       <Contact />
@@ -20,8 +20,13 @@ import Contact from "../components/Contact.astro";
 <style>
   main {
     display: flex;
-    max-width: 1240px;
+    max-width: 1470px;
     margin: 0 auto;
     gap: 50px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 </style>
