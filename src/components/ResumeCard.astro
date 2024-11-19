@@ -1,0 +1,91 @@
+---
+const { date, role, company, img } = Astro.props;
+---
+
+<div class="experience-container">
+  <div class="experience-container-text">
+    <div class="experience-date">{date}</div>
+    <h2 class="experience-role">{role}</h2>
+    <h1 class="experience-company">{company}</h1>
+  </div>
+  <img src={img} alt="Company Icon" class="icon" />
+</div>
+
+<style>
+  .experience-container {
+    position: relative;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    margin: 1em 0;
+    width: 80%;
+  }
+
+  .experience-container:hover {
+    border-color: #6a0dad;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .experience-container-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-container:nth-child(odd) {
+    margin-left: 20%;
+  }
+
+  .experience-container:nth-child(even) {
+    margin-right: 20%;
+  }
+
+  .experience-date {
+    font-size: 1.2em;
+    color: #6a0dad;
+    font-weight: bold;
+  }
+
+  .experience-role {
+    font-size: 0.8em;
+    color: #333;
+    margin: 0;
+  }
+
+  .experience-company {
+    font-size: 1.3em;
+    color: #000;
+    margin: 0;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    filter: grayscale(100%);
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .experience-container:hover .icon {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .experience-container {
+      width: 100%;
+    }
+
+    .experience-container:nth-child(odd),
+    .experience-container:nth-child(even) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>
